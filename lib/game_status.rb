@@ -27,6 +27,7 @@ def won?(board)
     elsif board.none? {|x| x == " "} && !win_combination.all? {|index| board[index] == "X"} && !win_combination.all? {|index| board[index] == "O"}
       return false
     end
+    winner
   end
 end
 
