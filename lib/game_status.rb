@@ -19,10 +19,9 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   winner = []
-  WIN_COMBINATIONS.each do |win_combination|
-    if win_combination.all? {|index| board[index] == "X"} || win_combination.all? {|index| board[index] == "O"}
-      winner = win_combination
-      return winner
+  WIN_COMBINATIONS.detect do |win_combination|
+    if if (board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X") || (board[win_combination[0]] == "O" && board[win_combination[1]] == "O" && board[win_combination[2]] == "O")
+      winner == win_combination
     elsif board.all? {|x| x == " "}
       return false
     elsif board.none? {|x| x == " "} && !win_combination.all? {|index| board[index] == "X"} && !win_combination.all? {|index| board[index] == "O"}
