@@ -25,8 +25,8 @@ def won?(board)
     elsif board.all? {|x| x == " "}
       return false
     end
-    winner
   end
+  winner
 end
 
 def full?(board)
